@@ -5,11 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <title>Aterix.com - умножение матриц</title>
     <link rel="stylesheet" href="css/styles.css" type="text/css">
+    <link rel="stylesheet" href="css/multiply.css" type="text/css">
     <link rel="shortcut icon" href="images/favicon.png" type="image/png">
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Oswald:400,300" type="text/css">
 </head>
 <body>
-<div id="wrapper">
+<div id="wrapper" >
     <a href="index.html"><img src="images/logo.png" width="292" height="75"></a>
     <h1>Умножение матриц</h1>
     <nav>
@@ -17,10 +18,10 @@
             <li><a href="index.html">Главная</a></li>
             <li class="active"><a>Калькулятор матриц</a><ul>
                 <li><a href="determinant.html">Найти определитель матрицы</a></li>
-                <li><a href="rang.html">Найти ранг матрицы</a></li>
                 <li><a href="transporation.html">Транспонировать матрицу</a></li>
                 <li><a href="multiply.html">Перемножить матрицу</a></li>
-                <li><a href="reverse.html">Найти обратную матрицу</a></li>
+                <li><a href="rang.html">Найти ранг матрицы</a></li>
+                <li><a href="sum.html">Сложить матрицы</a></li>
             </ul>
             </li>
             <li><a href="contacts.html">Контакты</a></li>
@@ -39,7 +40,7 @@
         </ul>
         <textarea class="multi" id="text"></textarea>
         <textarea class="multi" id="text2"></textarea>
-        <div id="result"></div>
+        <div id="result" class="absolute"></div>
         <div class="button" onclick="printMassive( multiplyMatrix() )">Посчитать!</div>
 
     </section>

@@ -14,6 +14,7 @@ function splitOnDoubleMassive() {
     var mass = [[]];
     var textmass = [];
     textmass = text.split('\n');
+    var i = 0;
     while(i < textmass.length) {
         mass[i] = textmass[i].split(' ');
         ++i;
@@ -26,6 +27,7 @@ function splitOnDoubleMassive2() {
     var mass = [[]];
     var textmass = [];
     textmass = text.split('\n');
+    var i = 0;
     while(i < textmass.length) {
         mass[i] = textmass[i].split(' ');
         ++i;
@@ -44,23 +46,24 @@ function transMatrix() {
 }
 
 function printMassive(massive) {
-    var text = '';
+    var text = '<table>';
     for(var i = 0; i < massive.length; ++i) {
+
+        text += "<tr>";
         for(var j = 0; j < massive[i].length; ++j) {
-            text += massive[i][j];
-            text += ' ';
+            text += "<td>" + massive[i][j] + "</td>";
         }
-        text += '\n';
+        text += "</tr>";
     }
-    document.getElementById('result').innertext = text;
+    text += "</table>";
+    document.getElementById('result').innerHTML = text;
 }
 
 function printNumber(number) {
     var text = '';
-    text+=number;
-    document.getElementById('result').innertext = text;
+    text += number;
+    document.getElementById('result').innerText = text;
 }
-
 
 
 function determinantMatrix( ) {
@@ -98,8 +101,36 @@ function multiplyMatrix()
 {
     A = splitOnDoubleMassive();
     B = splitOnDoubleMassive2();
-
-    return B;
+    var rowsA = A.length, colsA = A[0].length,
+        rowsB = B.length, colsB = B[0].length,
+        C = [];
+    if (colsA != rowsB) {
+        return false;
+    }
+    for (var i = 0; i < rowsA; i++)
+        C[i] = [];
+    for (var k = 0; k < colsB; k++) {
+        for (var i = 0; i < rowsA; i++) {
+            var t = 0;
+        for (var j = 0; j < rowsB; j++)
+            t += A[i][j]*B[j][k];
+        C[i][k] = t;
+        }
+    }
+    return C;
 }
 
+function sumMatrix() {
+    A = splitOnDoubleMassive();
+    B = splitOnDoubleMassive2();
+    var C = [];
+    for (var i = 0; i < A.length; i++)
+    { C[i] = [];
+        for (var j = 0; j < A[0].length; j++) {
+
+         C[i][j] = parseFloat(A[i][j])+parseFloat(B[i][j]);
+        }
+    }
+    return C;
+}
 

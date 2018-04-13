@@ -3,24 +3,25 @@
 <head>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-    <title>Aterix.com - Обратная матрица</title>
+    <title>Aterix.com - сложение матриц</title>
     <link rel="stylesheet" href="css/styles.css" type="text/css">
+    <link rel="stylesheet" href="css/multiply.css" type="text/css">
     <link rel="shortcut icon" href="images/favicon.png" type="image/png">
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Oswald:400,300" type="text/css">
 </head>
 <body>
-<div id="wrapper">
+<div id="wrapper" >
     <a href="index.html"><img src="images/logo.png" width="292" height="75"></a>
-    <h1>Нахождение обратной матрицы</h1>
+    <h1>Сложение матриц</h1>
     <nav>
         <ul class="top-menu">
             <li><a href="index.html">Главная</a></li>
             <li class="active"><a>Калькулятор матриц</a><ul>
                 <li><a href="determinant.html">Найти определитель матрицы</a></li>
-                <li><a href="rang.html">Найти ранг матрицы</a></li>
                 <li><a href="transporation.html">Транспонировать матрицу</a></li>
                 <li><a href="multiply.html">Перемножить матрицу</a></li>
-                <li><a href="reverse.html">Найти обратную матрицу</a></li>
+                <li><a href="rang.html">Найти ранг матрицы</a></li>
+                <li><a href="pow.html">Сложить матрицы</a></li>
             </ul>
             </li>
             <li><a href="contacts.html">Контакты</a></li>
@@ -32,13 +33,15 @@
     <section class="calc">
         <h1> Введите матрицу:</h1>
         <ul class="info">
-            <li>Для нахождения обратной матрицы нужно ввести матрицу размером n*n.</li>
+            <li>Для сложения матриц введите в соответствующие окна данные</li>
+            <li>Для перемножение матрицы на число нужно заполнить одно из окон числом, второе же- нужной нам матрицей</li>
             <li>Вводить матрицу следует с помощью пробелов, разделяя каждую строку с помощью символа разделителя строки</li>
             <li>Символ разделителя строки получается нажатием клавиши Enter</li>
         </ul>
-        <textarea id="text"></textarea>
-        <div class="button">Посчитать!</div>
-
+        <textarea class="multi" id="text"></textarea>
+        <textarea class="multi" id="text2"></textarea>
+        <div id="result" class="absolute"></div>
+        <div class="button" onclick="printMassive( sumMatrix() )">Посчитать!</div>
     </section>
 </div>
 <footer>
